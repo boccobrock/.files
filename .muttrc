@@ -1,0 +1,13 @@
+set imap_user        = boccobrock@gmail.com
+set folder           = imaps://imap.gmail.com/
+set editor           = vim
+set my_name          = 'Jeff Brock'
+set spoolfile        = +INBOX
+mailboxes            = +INBOX
+set header_cache     = ~/.cache/mutt
+set message_cachedir = "~/.cache/mutt"
+set postponed        = +[Gmail]/Drafts
+set imap_keepalive   = 300
+set mail_check       = 120
+unset imap_passive
+source ~/.files/mutt-colors-solarized-dark-16.muttrc
