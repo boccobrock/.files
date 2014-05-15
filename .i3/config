@@ -167,7 +167,7 @@ bar {
 
 exec --no-startup-id nm-applet
 new_window none
-bindsym $mod+c exec dwb
+bindsym $mod+c exec chromium
 bindsym $mod+p exec i3lock -c 000000
 bindsym $mod+u exec nmcli con up id UConnect
 bindsym $mod+y exec "xclip -o | xclip -selection clipboard -i"
