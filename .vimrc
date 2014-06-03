@@ -17,6 +17,7 @@ Plugin 'mhinz/vim-signify'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'vim-scripts/AutoComplPop'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on  	" Automatically detect file types.
@@ -148,12 +149,8 @@ cmap w!! w !sudo tee % >/dev/null
 " CtrlP
 nnoremap <leader>f :CtrlP<CR>
 
-" Taglist
-nnoremap <leader>o :TlistToggle<CR>
-let Tlist_Auto_Open = 0
-let Tlist_Use_Right_Window = 1
-let Tlist_WinWidth = 50
-let tlist_php_settings = 'php;c:classes;i:interfaces;d:constant definitions;f:functions;j:javascript functions'
+" Tagbar
+nnoremap <leader>o :TagbarToggle<CR>
 
 " NerdTree
 map <leader>t :NERDTreeToggle<CR>:NERDTreeMirror<CR>
