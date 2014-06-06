@@ -1,5 +1,5 @@
 " Environment :
-set nocompatible 		" must be first line
+set nocompatible " must be first line
 filetype off
 
 " Vundle setup
@@ -20,16 +20,14 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
-filetype plugin indent on  	" Automatically detect file types.
+filetype plugin indent on " Automatically detect file types.
 
 " General
-set hidden " allow hidden buffers instead of just closing them
-syntax on 					" syntax highlighting
-set mouse=a					" automatically enable mouse usage
-
-" set autowrite                  " automatically write a file when leaving a modified buffer
-set shortmess+=filmnrxoOtT     	" abbrev. of messages (avoids 'hit enter')
-set history=1000  				" Store a ton of history (default is 20)
+set hidden  " allow hidden buffers instead of just closing them
+syntax on   " syntax highlighting
+set mouse=a " automatically enable mouse usage
+set shortmess+=filmnrxoOtT " abbrev. of messages (avoids 'hit enter')
+set history=1000           " Store a ton of history (default is 20)
 
 " Setting up our backups and directories:
 set backup
@@ -37,13 +35,22 @@ set backupdir=$HOME/.vim/backup//
 set directory=$HOME/.vim/swap//
 set viewdir=$HOME/.vim/views//
 
-"" Creating directories if they don't exist
+" Creating directories if they don't exist
 silent execute '!mkdir -p $HOME/.vim/backup'
 silent execute '!mkdir -p $HOME/.vim/swap'
 silent execute '!mkdir -p $HOME/.vim/views'
 
+" Key (re)Mappings
+let mapleader = ','
+
+" make
+noremap <leader>m :make<CR>
+
+" make and display a latex pdf
+noremap <leader>p :!pdflatex % && apvlv %:r.pdf<CR>
+
 " session quit shortcut to save current session
-nmap SQ <ESC>:mksession! ./.session.vim<CR>:wqa<CR>
+nmap <leader>s <ESC>:mksession! ./.session.vim<CR>
 
 " if we enter vim in a directory with a saved session, then load it
 function! RestoreSession()
@@ -88,9 +95,6 @@ set softtabstop=4 				" let backspace delete indent
 set matchpairs+=<:>            	" match, to be used with % 
 set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
 
-" Key (re)Mappings
-let mapleader = ','
-
 " Making it so ; works like : for commands. Saves typing and eliminates :W style typos due to lazy holding shift.
 nnoremap ; :
 
@@ -129,9 +133,6 @@ nnoremap <Leader>, :bn<CR>
 cmap cwd lcd %:p:h
 cmap cd. lcd %:p:h
 
-" make and display a latex pdf
-noremap <leader>p :!pdflatex % && apvlv %:r.pdf<CR>
-
 " visual shifting (does not exit Visual mode)
 vnoremap < <gv
 vnoremap > >gv 
@@ -146,6 +147,9 @@ imap [H g0
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
+" Fix bg color of SignColumn for signify plugin
+highlight SignColumn ctermbg=Black
+
 " CtrlP
 nnoremap <leader>f :CtrlP<CR>
 
@@ -153,9 +157,7 @@ nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>o :TagbarToggle<CR>
 
 " NerdTree
-map <leader>t :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
+map <leader>t :NERDTreeToggle<CR>
 
 let NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize = 40
