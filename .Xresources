@@ -12,15 +12,14 @@ URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
-URxvt.saveLines:            50
+URxvt.saveLines:            150
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           true
-/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-URxvt*font: xft:Monospace:pixelsize=14
-URxvt*boldFont: xft:Monospace:pixelsize=14
+URxvt*font:                 xft:Literation Mono Powerline:size=11
+URxvt*boldFont:             xft:Literation Mono Powerline:size=11
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -32,7 +31,7 @@ URxvt.scrollBar:            false
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          chromium
+URxvt.url-launcher:         xdg-open
 
 ! Cursor
 URxvt.cursorBlink:          true

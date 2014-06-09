@@ -152,6 +152,9 @@ nnoremap <leader>f :CtrlP<CR>
 " Tagbar
 nnoremap <leader>o :TagbarToggle<CR>
 
+" Airline font
+let g:airline_powerline_fonts = 1
+
 " NerdTree
 map <leader>t :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 map <leader>e :NERDTreeFind<CR>
