@@ -21,9 +21,9 @@ URxvt.allow_bold:           true
 ! For powerline patched fonts:
 ! git clone https://github.com/Lokaltog/powerline-fonts ~/.local/share/fonts/
 ! fc-cache -vf ~/.local/share/fonts/
-! xrdb -merge ~/.Xdefaults
-URxvt*font:                 xft:Literation Mono Powerline:size=11
-URxvt*boldFont:             xft:Literation Mono Powerline:size=11
+! xrdb -merge ~/.Xresources
+URxvt*font:                 xft:Sauce Code Powerline:size=10
+URxvt*boldFont:             xft:Sauce Code Powerline:size=10
 
 ! Fix font space
 URxvt*letterSpace: -1

@@ -9,5 +9,5 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
 fpath+=( ~/.files/zsh-prompt-powerline/ )
 autoload promptinit ; promptinit
-zstyle ':vcs_info:*:powerline:*' check-for-changes true
+zstyle ':prompt:powerline:ps1' default-sh-level 3
 prompt powerline
