@@ -41,22 +41,22 @@ prompt_powerline_vcsstyles () {
     zstyle ':vcs_info:*:powerline:*' nvcsformats   "%K{black}$sep1%F{white} %1v%F{black} "
 
     # generic vcs
-    zstyle ':vcs_info:*:powerline:*' formats         "%K{23}$sep1%F{123} %s ${FMT_BRANCH} %F{23}${FMT_PATH} "
-    zstyle ':vcs_info:*:powerline:*' actionformats   "%K{23}$sep1%F{123} %s ${FMT_BRANCH}${FMT_ACTION} %F{23}${FMT_PATH} "
+    zstyle ':vcs_info:*:powerline:*' formats         "%K{9}$sep1%F{123} %s ${FMT_BRANCH} %F{9}${FMT_PATH} "
+    zstyle ':vcs_info:*:powerline:*' actionformats   "%K{9}$sep1%F{123} %s ${FMT_BRANCH}${FMT_ACTION} %F{9}${FMT_PATH} "
 
     # special hg stuff
-    zstyle ':vcs_info:hg:powerline:*'  formats       "%K{23}$sep1%F{123} ☿ ${FMT_BRANCH} %F{23} ${FMT_PATH} "
-    zstyle ':vcs_info:hg:powerline:*' actionformats  "%K{23}$sep1%F{123} ☿ ${FMT_BRANCH}${FMT_ACTION} %F{23}${FMT_PATH} "
+    zstyle ':vcs_info:hg:powerline:*'  formats       "%K{9}$sep1%F{123} ☿ ${FMT_BRANCH} %F{9} ${FMT_PATH} "
+    zstyle ':vcs_info:hg:powerline:*' actionformats  "%K{9}$sep1%F{123} ☿ ${FMT_BRANCH}${FMT_ACTION} %F{9}${FMT_PATH} "
 
     # special git stuff
-    zstyle ':vcs_info:git:powerline:*' formats       "%K{23}$sep1%F{123} ± ${FMT_BRANCH} %m%F{23}${FMT_PATH} "
-    zstyle ':vcs_info:git:powerline:*' actionformats "%K{23}$sep1%F{123} ± ${FMT_BRANCH}${FMT_ACTION} %m%F{23}${FMT_PATH} "
+    zstyle ':vcs_info:git:powerline:*' formats       "%K{9}$sep1%F{123} ± ${FMT_BRANCH} %m%F{9}${FMT_PATH} "
+    zstyle ':vcs_info:git:powerline:*' actionformats "%K{9}$sep1%F{123} ± ${FMT_BRANCH}${FMT_ACTION} %m%F{9}${FMT_PATH} "
 
     # lofi formats
     # for details see here: https://github.com/Valodim/zshrc/blob/master/custom/96-vcs_info-lofi.zsh
-    zstyle ':vcs_info:*:powerline:*'   lofiformats   "%K{23}$sep1%F{123} %s %F{23}${FMT_PATH} "
-    zstyle ':vcs_info:hg:powerline:*'  lofiformats   "%K{23}$sep1%F{123} ☿ %F{23}${FMT_PATH} "
-    zstyle ':vcs_info:git:powerline:*' lofiformats   "%K{23}$sep1%F{123} ± %F{23}${FMT_PATH} "
+    zstyle ':vcs_info:*:powerline:*'   lofiformats   "%K{9}$sep1%F{123} %s %F{9}${FMT_PATH} "
+    zstyle ':vcs_info:hg:powerline:*'  lofiformats   "%K{9}$sep1%F{123} ☿ %F{9}${FMT_PATH} "
+    zstyle ':vcs_info:git:powerline:*' lofiformats   "%K{9}$sep1%F{123} ± %F{9}${FMT_PATH} "
 
     # see https://github.com/Valodim/zshrc/blob/master/custom/96-vcs_info-githooks.zsh
     # tracking formats: behind, ahead and seperator
@@ -111,7 +111,7 @@ prompt_powerline_precmd () {
     fi
 
     # end the hostname background
-    prompt_bits+=( "%F{238}" )
+    prompt_bits+=( "%F{10}" )
 
     # add exitstatus segment, if it's non-zero
     (( exstat > 0 )) && prompt_bits+=( "%K{red}$sep1%F{white} %B%? %b%F{red}" )
@@ -141,35 +141,19 @@ prompt_powerline_precmd () {
 prompt_powerline_ps1 () {
     setopt localoptions noksharrays extendedglob
 
-    local host_color
-    # can we even make any assumptions about the terminal?
-    if ! (( $+terminfo[colors] )); then
-        host_color='green'
-    elif zstyle -s ":prompt:valodim:ps1:${HOST}" host-color host_color; then
-        # make sure it's within range
-        [[ host_color == <-> ]] && host_color=$(( host_color % $terminfo[colors] ))
-        # otherwise, don't care
-    else
-        # get a number from the sha1 hash of the hostname
-        host_color=${${"$(sha1sum <<< $HOST)"//[a-z]#/}[1,14]}
-        # divide by 256/88/8/whatever
-        host_color=$(( host_color % $terminfo[colors] ))
-    fi
-
-
     # hide username if it's my regular one (anyone else might wanna change this)
     local user=""
     if ! zstyle -t ':prompt:powerline:ps1' hide-user; then
-        user=" %F{247}$sep2 %(!.%F{red}.)%n"
+        user=" %F{14}$sep2 %(!.%F{red}.)%n"
     fi
 
     integer default_level
     zstyle -s ':prompt:powerline:ps1' default-sh-level default_level || default_level=1
     # using eval here because (l::) expansion flag doesn't support variables.
     # someone who can sneak in variables here can do code execution anyways~
-    eval 'local shlvl="%K{238}%F{$host_color}$sep1${(l:$SHLVL-$default_level::'$sep2':):-} "'
+    eval 'local shlvl="%K{10}%F{15}$sep1${(l:$SHLVL-$default_level::'$sep2':):-} "'
 
-    local userhost="%F{$host_color}${HOST}${user}"
+    local userhost="%F{15}${HOST}${user}"
     local jobstat="%(1j.%K{green}$sep1%F{white} %B%j %b%F{green}.)"
     # we do the $HOME replacement here to avoid annoyingly long paths. It's not
     # as good as (D), but oh well!
@@ -226,4 +210,3 @@ a prompt with powerline patched font not supporting 256 colors is kind of a Rari
 }
 
 [[ -o kshautoload ]] || prompt_powerline_setup "$@"
-
