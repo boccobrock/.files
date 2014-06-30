@@ -178,3 +178,4 @@ bindsym XF86KbdBrightnessDown exec kbd_down.sh
 bindsym XF86KbdBrightnessUp exec kbd_up.sh
 floating_minimum_size 100 x 100
 assign [class="^Steam$"] steam
+for_window [class="[.]*"] floating disable

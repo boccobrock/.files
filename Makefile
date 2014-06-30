@@ -2,7 +2,7 @@
 PWD := $(shell pwd)
 
 dotfiles = ~/.i3 ~/.i3status.conf ~/.livestreamerrc ~/.muttrc ~/.vim \
-			~/.vimrc ~/.gitconfig ~/.xinitrc ~/.Xresources \
+			~/.vimrc ~/.fehbg ~/.gitconfig ~/.xinitrc ~/.Xresources \
 			~/.zprofile ~/.zshrc
 
 link: $(dotfiles)
@@ -23,6 +23,9 @@ link: $(dotfiles)
 
 ~/.vimrc: ./.vimrc
 	ln -s $(PWD)/.vimrc ~/.vimrc
+
+~/.fehbg:
+	feh --bg-scale $(PWD)/archlinux-solarized.png
 
 ~/.gitconfig: ./.gitconfig
 	ln -s $(PWD)/.gitconfig ~/.gitconfig
