@@ -167,6 +167,7 @@ bar {
 
 exec --no-startup-id nm-applet
 new_window none
+new_float none
 bindsym $mod+c exec chromium
 bindsym $mod+p exec i3lock -c 000000
 bindsym $mod+u exec nmcli con up id UConnect
