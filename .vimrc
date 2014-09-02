@@ -47,7 +47,7 @@ let mapleader = ','
 noremap <leader>m :make<CR>
 
 " make and display a latex pdf
-noremap <leader>p :!pdflatex % && apvlv %:r.pdf<CR>
+noremap <leader>p :!pdflatex % && evince %:r.pdf<CR>
 
 " session quit shortcut to save current session
 nmap <leader>s <ESC>:mksession! ./.session.vim<CR>

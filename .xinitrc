@@ -1,3 +1,5 @@
+export PATH=$PATH:~/bin/
+
 sh ~/.fehbg &
 xrdb -merge ~/.Xresources
 unclutter -root -idle 1 &

@@ -169,8 +169,8 @@ exec --no-startup-id nm-applet
 new_window none
 new_float none
 bindsym $mod+c exec chromium
+bindsym $mod+n exec surf www.google.com
 bindsym $mod+p exec i3lock -c 000000
-bindsym $mod+u exec nmcli con up id UConnect
 bindsym $mod+y exec "xclip -o | xclip -selection clipboard -i"
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioLowerVolume exec amixer set Master 2dB-
