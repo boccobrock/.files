@@ -178,6 +178,10 @@ bindsym XF86AudioLowerVolume exec amixer set Master 2dB-
 bindsym XF86AudioRaiseVolume exec amixer set Master 2dB+
 bindsym XF86KbdBrightnessDown exec kbd_down.sh
 bindsym XF86KbdBrightnessUp exec kbd_up.sh
+bindsym $mod+comma exec xbacklight -dec 5
+bindsym $mod+period exec xbacklight -inc 5
+bindsym $mod+shift+comma exec xbacklight -dec 10
+bindsym $mod+shift+period exec xbacklight -inc 10
 floating_minimum_size 100 x 100
 assign [class="^Steam$"] steam
 for_window [class="[.]*"] floating disable
