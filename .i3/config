@@ -197,6 +197,12 @@ bar {
             active_workspace   $Sb_2 $Sv   $Sb_3
             inactive_workspace $Sb_2 $Sb_1 $Sb_3
             urgent_workspace   $Sb_2 $Sy   $Sb_3
+
+# Light
+#            focused_workspace  $Sb0 $Sb_3  $Sb3
+#            active_workspace   $Sb0 $Sv    $Sb3
+#            inactive_workspace $Sb0 $Sb_0  $Sb3
+#            urgent_workspace   $Sb0 $Sy    $Sb3
         }
 }
 
