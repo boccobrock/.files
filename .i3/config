@@ -200,6 +200,12 @@ bar {
         }
 }
 
+# set some nice colors      border     background  text
+client.focused              $Sb3       $Sb3        $Sb_2
+client.unfocused            $Sb_0      $Sb_0       $Sb_2
+client.focused_inactive     $Sb2       $Sb2        $Sb1
+client.urgent               $Sr        $Sr         $Sb2
+
 exec --no-startup-id nm-applet
 new_window none
 new_float none
@@ -220,3 +226,7 @@ bindsym $mod+shift+period exec xbacklight -inc 10
 floating_minimum_size 100 x 100
 assign [class="^Steam$"] steam
 for_window [class="[.]*"] floating disable
+for_window [class="qemu-system-x86_64"] floating enable, border normal
+
+# Enables Browser popups 
+#for_window [window_role="pop-up"] floating enable
