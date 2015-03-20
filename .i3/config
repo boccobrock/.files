@@ -218,6 +218,12 @@ bar {
         }
 }
 
+# set some nice colors      border     background  text
+client.focused              $Sb3       $Sb3        $Sb_2
+client.unfocused            $Sb_0      $Sb_0       $Sb_2
+client.focused_inactive     $Sb2       $Sb2        $Sb1
+client.urgent               $Sr        $Sr         $Sb2
+
 exec --no-startup-id nm-applet
 new_window none
 bindsym $mod+c exec chromium
