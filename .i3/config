@@ -212,9 +212,9 @@ bar {
             separator  $Sg
 
             focused_workspace  $Sb0 $Sb_3  $Sb3
-            active_workspace   $Sb0 Sv     $Sb3
+            active_workspace   $Sb0 $Sv    $Sb3
             inactive_workspace $Sb0 $Sb_0  $Sb3
-            urgent_workspace   $Sb0 Sy     $Sb3
+            urgent_workspace   $Sb0 $Sy    $Sb3
         }
 }
 
