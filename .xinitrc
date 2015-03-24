@@ -12,7 +12,7 @@ xrdb -merge ~/.Xresources
 unclutter -root -idle 1 &
 udiskie &
 autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
 dunst &
-variety &
 
 exec i3
