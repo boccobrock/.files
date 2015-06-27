@@ -233,6 +233,7 @@ floating_minimum_size 100 x 100
 assign [class="^Steam$"] steam
 for_window [class="[.]*"] floating disable
 for_window [class="qemu-system-x86_64"] floating enable, border normal
+focus_follows_mouse no
 
 # Enables Browser popups 
 #for_window [window_role="pop-up"] floating enable
