@@ -18,10 +18,6 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           true
-! For powerline patched fonts:
-! git clone https://github.com/Lokaltog/powerline-fonts ~/.local/share/fonts/
-! fc-cache -vf ~/.local/share/fonts/
-! xrdb -merge ~/.Xresources
 URxvt*font:                 xft:Sauce Code Powerline:size=10
 URxvt*boldFont:             xft:Sauce Code Powerline:size=10
 
