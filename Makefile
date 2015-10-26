@@ -2,7 +2,7 @@
 PWD := $(shell pwd)
 
 dotfiles = ~/.i3 ~/.i3status.conf ~/.livestreamerrc ~/.muttrc ~/.vim \
-			~/.vimrc ~/.fehbg ~/.gitconfig ~/.xinitrc ~/.Xresources \
+			~/.vimrc ~/.gitconfig ~/.xinitrc ~/.Xresources \
 			~/.zprofile ~/.zshrc
 
 link: $(dotfiles)
