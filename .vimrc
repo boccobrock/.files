@@ -16,6 +16,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-signify'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'othree/vim-autocomplpop'
+Plugin 'eparreno/vim-l9'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'terryma/vim-multiple-cursors'
 
