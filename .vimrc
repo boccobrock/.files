@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -159,3 +160,4 @@ nnoremap <leader>b :!msbuild<CR>
 nnoremap <leader>n :OmniSharpGetCodeActions<CR>
 nnoremap <leader>v :OmniSharpGotoDefinition<CR>
 nnoremap <leader>u :OmniSharpFindUsages<CR>
+set completeopt=longest,menuone
