@@ -7,7 +7,7 @@ PATH=$PATH:~/.gem/ruby/2.1.0/bin/
 PATH=$PATH:~/bin/
 PATH=$PATH:~/.go/bin/
 export GREP_COLOR='1;32'
-eval $(keychain --eval --quiet --noask id_rsa)
+eval $(keychain --eval --quiet id_rsa)
 
 autoload -U compinit
 compinit
