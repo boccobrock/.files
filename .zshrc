@@ -13,10 +13,7 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
-fpath+=( ~/.files/zsh-prompt-powerline/ )
-autoload promptinit ; promptinit
-zstyle ':prompt:powerline:ps1' default-sh-level 3
-prompt powerline
+. /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo

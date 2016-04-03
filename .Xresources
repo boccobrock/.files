@@ -18,8 +18,8 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt.allow_bold:           true
-URxvt*font:                 xft:Sauce Code Powerline:size=10
-URxvt*boldFont:             xft:Sauce Code Powerline:size=10
+URxvt*font:                 xft:Source Code Pro:size=10
+URxvt*boldFont:             xft:Source Code Pro:size=10
 
 ! Fix font space
 URxvt*letterSpace: -1
