@@ -6,8 +6,8 @@ PATH=$PATH:/usr/local/heroku/bin/
 PATH=$PATH:~/.gem/ruby/2.1.0/bin/
 PATH=$PATH:~/bin/
 PATH=$PATH:~/.go/bin/
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-eval $(keychain --eval --quiet id_rsa)
+export GREP_COLOR='1;32'
+eval $(keychain --eval --quiet --noask id_rsa)
 
 autoload -U compinit
 compinit
