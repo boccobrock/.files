@@ -77,4 +77,5 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_by_filename = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#left_alt_sep = ''
