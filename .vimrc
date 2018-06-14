@@ -1,8 +1,6 @@
-" Environment :
-set nocompatible " must be first line
+set nocompatible
 filetype off
 
-" Vundle setup
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -12,7 +10,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-signify'
 Plugin 'ervandew/supertab'
 Plugin 'romainl/flattened'
@@ -23,25 +20,25 @@ Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-sensible'
 
 call vundle#end()
-filetype plugin indent on " Automatically detect file types.
+filetype plugin indent on
 
 set hlsearch
-set nu							" Line numbers on
-set showmatch					" show matching brackets/parenthesis
-set ignorecase					" case insensitive search
-set smartcase					" case sensitive when uc present
-set wildmode=list:longest,full	" command <Tab> completion, list matches, then longest common part, then all.
-set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
-set gdefault					" the /g flag on :s substitutions by default
+set nu
+set showmatch
+set ignorecase
+set smartcase
+set wildmode=list:longest,full
+set whichwrap=b,s,h,l,<,>,[,]
+set gdefault
 set wildignore+=*\\tmp\\*,*.swp,*.class,*.zip,*.exe,*\\.git\\*,*\\.hg\\*,*\\.svn\\*,*\\out\\*,*\\build\\*,*.log,*.idea,*\\reports\\*
 set cursorline
 set cursorcolumn
 set completeopt=longest,menuone
-set shiftwidth=4               	" use indents of 4 spaces
-set expandtab 	  	     		" tabs are spaces, not tabs
-set tabstop=4 					" an indentation every four columns
-set softtabstop=4 				" let backspace delete indent
-set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
+set shiftwidth=4
+set expandtab 
+set tabstop=4
+set softtabstop=4
+set pastetoggle=<F12>
 
 colorscheme flattened_dark
 set guioptions-=L
@@ -65,8 +62,7 @@ nnoremap <leader>m :make<CR>
 nnoremap <leader>l :!pdflatex % && evince %:r.pdf<CR>
 nnoremap <leader>f :CtrlPCurWD<CR>
 nnoremap <leader>g :CtrlPMRUFiles<CR>
-nnoremap <leader>o :TagbarToggle<CR>
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>t :Explore<CR>
 
 let NERDTreeShowBookmarks=1
 let g:NERDTreeWinSize = 40
