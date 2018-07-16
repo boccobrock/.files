@@ -18,10 +18,13 @@ Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-sensible'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()
 filetype plugin indent on
 
+syntax on
+set hidden
 set hlsearch
 set nu
 set showmatch
